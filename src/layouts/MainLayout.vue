@@ -51,7 +51,7 @@
             <q-item-label>Personal</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item tag="a" href = "https://github.com/LeonelReyes" clickable>
+        <q-item tag="a" target="_blank" href = "https://github.com/LeonelReyes" clickable>
           <q-item-section avatar>
             <q-icon name="code" />
           </q-item-section>

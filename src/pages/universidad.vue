@@ -12,7 +12,8 @@
               tip: 'Tarea Guardada',
               icon: 'save',
               label: 'Guardar',
-              handler: saveWork
+              handler: saveWork, 
+              
             }
           }"
       :toolbar="[
@@ -35,7 +36,7 @@
         :class="item.estado ? 'tachar' : ''"
       >
       </q-card-section>
-      <q-btn flat color="blue" @click="item.estado = !item.estado">Acción</q-btn>
+      <q-btn flat color="blue" @click="item.estado = !item.estado">Realizado</q-btn>
       <q-btn flat color="red" @click="eliminar(index)">Eliminar</q-btn>
       <q-space />
     </q-card>
@@ -62,7 +63,8 @@
       saveWork () {
         this.tasks.push({
           texto: this.editor,
-          estado: false
+          estado: false,
+          
         })
         this.$q.notify({
           message: 'Saved your text to local storage',
@@ -70,7 +72,10 @@
           textColor: 'white',
           icon: 'cloud_done'
         })
+        this.editor = ""
       },
+      
+                  
       eliminar(index){
         this.$q.dialog({
           title: 'Cuidado!',
@@ -81,8 +86,9 @@
           this.tasks.splice(index, 1);
         })
       }
-}
-  };
+    },
+};
+  
 </script>
 <style>
   .tachar {

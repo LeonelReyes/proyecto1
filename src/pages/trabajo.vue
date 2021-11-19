@@ -34,7 +34,7 @@
         :class="item.estado ? 'tachar' : ''"
       >
       </q-card-section>
-      <q-btn flat color="blue" @click="item.estado = !item.estado">Acción</q-btn>
+      <q-btn flat color="blue" @click="item.estado = !item.estado">Realizado</q-btn>
       <q-btn flat color="red" @click="eliminar(index)">Eliminar</q-btn>
       <q-space />
     </q-card>
@@ -69,6 +69,7 @@
           textColor: 'white',
           icon: 'cloud_done'
         })
+        this.editor = ""
       },
       eliminar(index){
         this.$q.dialog({
@@ -80,7 +81,7 @@
           this.tasks.splice(index, 1);
         })
       }
-}
+    }
   };
 </script>
 <style>
