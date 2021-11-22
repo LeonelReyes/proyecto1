@@ -2,12 +2,7 @@
   <div class="flex flex-center">
     <h3>Notas Personales</h3>
   </div>
-  <div class="q-pa-md">
-    <div class="q-gutter-md" style="max-width: 300px">
-      <q-input outlined  label="Buscar en las notas..." v-model="filtro" />
-    </div>
-  </div>
-  
+ 
   <div class="q-pa-md q-gutter-sm">
     <!-- Editor -->
     <q-editor 
@@ -47,21 +42,13 @@
     />
 
     <!-- Donde se pinta -->
-    <q-card 
-      class="row justify-between"
-      flat 
-      bordered 
-      v-for="(item, index) in notasFiltradas" 
-      :key="index"
-    >
-
-    <!-- <q-card
+    <q-card
       flat
       bordered
       class="row justify-between"
       v-for="(item, index) in tasks"
       :key="index"
-    > -->
+    >
       <q-card-section
         v-html="item.texto"
         class="col"
@@ -88,29 +75,12 @@ import { db } from "boot/firebase";
         tasks: [],
         index: null,
         modoEdicion: false,
-        id: null,
-        notasFiltradas: [],
-        texto: '',
+        id: null
       }
     },
 created(){
   this.leerDatos();
-  this.notasFiltradas = this.tasks;
 },
-
-    computed:{
-          filtro:{
-            get(){
-              return this.texto
-            },
-            set(value){
-              console.log('filtro ejecutado!');
-              value = value.toLowerCase();
-              this.notasFiltradas = this.tasks.filter(nota => nota.texto.toLowerCase().indexOf(value) !== -1)
-              this.texto = value
-            }
-          }
-        },
 
     methods: {
       async leerDatos(){
