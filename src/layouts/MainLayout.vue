@@ -59,6 +59,14 @@
             <q-item-label>Github</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item tag="a" target="_blank" href = "https://www.linkedin.com/in/leonel-isaac-reyes-86706016/" clickable>
+          <q-item-section avatar>
+            <q-icon name="add" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>LinkedIn</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
